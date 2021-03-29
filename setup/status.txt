@@ -1,0 +1,6 @@
+Carl Tankersley
+
+My VM is set up, and Kali is installed and working as expected.
+
+I don't really know what to write for my plans for Kali, since I only know a little bit of what it can do. I might have
+to revisit that question after we've covered some material in class. 
