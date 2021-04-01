@@ -1,0 +1,18 @@
+1. ip a
+   Bonus: The ethernet will be labelled "eth0" and the wireless will have a different name
+
+2. nslookup <hostname>
+
+3. nslookup <ip address>
+
+4. scp <source file> username@destination_host:/path_to_destination_file
+
+5. nmap <hostname> | grep <port number>/tcp
+
+6. nmap <hostname>
+
+7. wget -p -k <hostname>
+
+8. curl -i <hostname>
+
+9. 
