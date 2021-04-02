@@ -13,8 +13,8 @@ Carl Tankersley
 
 6. nmap <hostname>
 
-7. wget -p -k <hostname>
+7. wget <hostname>
 
-8. curl -i <hostname>
+8. curl -s -D - -o /dev/null <hostname> 
 
-9. curl -s -D - -o /dev/null <hostname> 
+9. curl -s -v --stderr - <hostname> | grep -a '^>' 
