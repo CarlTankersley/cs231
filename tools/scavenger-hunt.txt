@@ -1,3 +1,5 @@
+Carl Tankersley
+
 1. ip a
    Bonus: The ethernet will be labelled "eth0" and the wireless will have a different name
 
