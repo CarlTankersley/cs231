@@ -15,4 +15,4 @@
 
 8. curl -i <hostname>
 
-9. 
+9. curl -s -D - -o /dev/null <hostname> 
