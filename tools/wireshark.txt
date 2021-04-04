@@ -15,7 +15,7 @@ Carl Tankersley and Josiah Misplon
    50 tells us that the US is currently using daylight savings time
    The first 0 means that there will not be a leap second this month
    The second 0 tells us that the server is healthy (accurate within one second)
-   776.9 is the number of miliseconds that NIST advances the time to account for network delays
+   776.9 is the number of milliseconds that NIST advances the time to account for network delays
    UTC means that it's universal standard time
    NIST means that it's coming from NIST
    * means that their network delay estimate was accurate
