@@ -1,0 +1,35 @@
+Soren DeHaan and Carl Tankersley
+
+======DIFFIE-HELLMAN======
+
+To find the shared secret, we found the powers to which g would need to be raised to give us the values we 
+intercepted when taken mod p. We used the following python code for this:
+
+def findSecret(g, p):
+    for i in range(p):
+        print("i = " + str(i) + ": " + str((g ** i) % p))
+        
+Using this code, we found Alice's secret integer to be 14 and Bob's to be 26. From there, we could just find 
+17^(14*26) mod 61, which gave us 12, which is their shared secret. However, if the integers that we were given for p 
+was much larger, the problem would quickly become intractable, since the number of possible exponents we would have to
+check becomes very large very quickly.
+
+======RSA======
+
+To find Bob's private key, we factored 4661 into 59*79, and then found the lcm(58,78) = 2262. Our task was then to find an
+integer which, when multiplied by the public key (31) gives us a remainder of 1 when divided by 2262. We found that 73 
+satisfied this (by brute force), so we know that the private key is 73. Once we had that, we were able to take each number
+in the ciphertext and raise it to the 73rd power and then took the remainder when divided by 2262, and converted the
+resulting integer into an ASCII character. This was done with the following code:
+
+def decode(lst, e, n):
+    decodedMessage = ""
+    for i in range(len(lst)):
+        decodedMessage += chr((lst[i] ** e) % n)
+    print(decodedMessage)
+	
+This gave us the decrypted plaintext:
+"Dear Bob, Check this out.  https://www.schneier.com/blog/archives/2017/12/e-mail_tracking_1.html Yikes! Your friend, Alice"
+
+This method would fail in the first step when we need to factor the larger integer of the public key. This quickly becomes
+intractable with larger integers, since there is no known polynomial time algorithm for factorization.
