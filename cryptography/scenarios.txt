@@ -1,0 +1,22 @@
+Soren DeHaan and Carl Tankersley
+
+1. Since the message is long, we don't want to use public key encryption, since that would be quite slow. Thus, we can 
+   use Diffie-Hellman to exchange keys for a symmetric encryption algorithm, and use that to encrypt the message.
+   
+2. There isn't a good way to tell whether or not someone has intercepted a message, but we can make sure that Mal can't
+   read or modify the message without Bob knowing by using Diffie-Hellman to exchange a key for a symmetric encryption
+   algorithm. Alice should then hash the message and encrypt both the message and the hash and send both to Bob. Mal 
+   can't read the message because it's encrpyted, and he can't modify it because Bob will see that the hashes don't 
+   match.
+   
+3. This is largely the same as the previous exercise, but this time, Alice should use her private key to sign the hash, 
+   since signing the message itself would take a long time, and Bob can then decrypt the hash with his private key and 
+   Alice's public key and decrypt the message with the symmetric key that they exchanged through Diffie-Hellman. This 
+   ensures that the message can't be read, since it's encrypted, or modified, since it's hashed, and it also allows Bob
+   to positively identify Alice as the sender, since the hash is signed with her private key. 
+   
+4. For this scenario, Alice should start out doing things exactly the same way that she did for the previous exercise,
+   but Bob should then do the same thing, sending a copy of the document back to Alice, signing the hash with his own
+   private key and Alice's public key. This allows both parties to verify that they received the same document and that
+   the other received it, and it allows both parties to be confident that Eve hasn't read it, since all of this was 
+   encrypted. 
