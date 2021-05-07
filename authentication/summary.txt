@@ -1,0 +1,29 @@
+Soren DeHaan and Carl Tankersley
+
+Part 1 (single word passwords)
+Passwords cracked: 1157
+Total time: 0.534 seconds
+Number of hashes computed: 267751 
+Passwords cracked per number of hashes computed: 0.00432
+Time per password cracked: .000461 seconds
+
+Part 1.5 (two word passwords, proof of concept)
+Passwords cracked: 12
+Total time: 547 seconds
+Number of hashes computed: 267751000 
+Passwords cracked per number of hashes computed: 4.48e-8
+Time per password cracked: 45.6 seconds
+
+Part 2 (single word passwords)
+Passwords cracked: 1132
+Total time: 651 seconds
+Number of hashes computed: 621455537
+Passwords cracked per number of hashes computed: 1.82e-6
+Time per password cracked: .575 seconds
+
+The salted version was 1250 times slower, since we couldn't
+pre-hash the dictionary and compare the hashes and had to salt
+and re-hash them for each different salt, which required us to
+iterate through, on average, half of the dicitonary for each 
+password that we were attempting to crack, rather than just 
+once in the entire process for the unsalted passwords.
